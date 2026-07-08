@@ -15,12 +15,14 @@ body {
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     background: var(--lavender);
     color: var(--hot-pink);
+    margin: 0;
+    padding: 20px;
 }
 
-#app-conatiner {
+#app-container {
     position: relative;
     width: 640px;
-    height: 480px;
+    min-height: 480px;
     margin: 10px auto;
     border: 10px solid var(--light-pink);
     border-radius: 15px;
@@ -28,8 +30,22 @@ body {
     background: var(--black);
     overflow: hidden;
 }
+#photo-strip {
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    align-items:center;
+    padding: 20px;
+}
+.slot{
+    width: 320px;
+    height: 240px;
+    background: #222;
+    border: 5px solid white;
+    border-radius: 5px;
+}
 
-#video, #photoCanvas, #overlayCanvas {
+#video, #overlayCanvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -41,11 +57,6 @@ body {
     z-index: 1;
 }
 
-#photoCanvas {
-    z-index: 2;
-    display: none;
-}
-
 #overlayCanvas {
     z-index: 3;
     pointer-events: none;
@@ -53,6 +64,27 @@ body {
 
 .controls {
     margin-top: 20px;
+}
+#sticker-palette{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top:20px;
+    padding: 20px;
+    border-radius:15px;
+    background: white;
+    border: 2px solid var(--light-pink);
+
+}
+}
+.sticker-option{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.sticker-option:hover {
+    transform: scale(1.2);
 }
 
 button {
@@ -69,4 +101,8 @@ button {
 button:hover {
     background: var(--dark-pink);
     transform: scale(1.05);
+}
+button :disabled{
+    background: #ccc;
+    cursor:not-allowed;
 }
