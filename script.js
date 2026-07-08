@@ -1,13 +1,13 @@
 const video = document.getElementById('video');
 const photoCanvas = document.getElementById('photoCanvas');
 const photoContext = photoCanvas.getContext('2d');
-const overlayCanvas = document.getElementById('overlayCanvas'); // Fixed: typo getElementByOd
+const overlayCanvas = document.getElementById('overlayCanvas');
 const overlayContext = overlayCanvas.getContext('2d');
 const snap = document.getElementById('snap');
 
 // Start camera
 async function Camera() {
-    try { // Added missing try block
+    try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
         video.srcObject = stream;
         video.addEventListener('loadedmetadata', setupCanvases, { once: true });
@@ -27,7 +27,7 @@ function setupCanvases() {
 
 function drawCuteOverlay(w, h) {
     overlayContext.lineWidth = 15;
-    overlayContext.strokeStyle = '#ff69b4'; // Fixed: missing '#'
+    overlayContext.strokeStyle = '#ff69b4';
     overlayContext.strokeRect(0, 0, w, h);
 
     overlayContext.lineWidth = 5;
@@ -50,7 +50,6 @@ snap.addEventListener('click', () => {
     snap.innerText = 'Saving...';
     snap.disabled = true;
 
-    // Fixed: document.createElement('canvas') instead of 'finalCanvas'
     const finalCanvas = document.createElement('canvas');
     finalCanvas.width = photoCanvas.width;
     finalCanvas.height = photoCanvas.height;
