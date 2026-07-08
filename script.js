@@ -1,3 +1,32 @@
+// Add these at the top with your other selectors
+const slots = document.querySelectorAll('.slot');
+let currentSlot = 0; 
+
+// --- Modify your existing 'snap' event listener to this: ---
+snap.addEventListener('click', () => {
+    if (currentSlot < 3) {
+        const canvas = slots[currentSlot];
+        const ctx = canvas.getContext('2d');
+        
+        // Match the canvas size to the video dimensions
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        
+        // Draw the frame into the specific slot
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        currentSlot++;
+        
+        // Update button text
+        if (currentSlot < 3) {
+            snap.innerText = `Take Photo ${currentSlot + 1}`;
+        } else {
+            snap.innerText = "All done! 💖";
+            snap.disabled = true;
+            video.style.display = 'none'; // Optional: Hide camera when done
+        }
+    }
+});
 const video = document.getElementById('video');
 const photoCanvas = document.getElementById('photoCanvas');
 const photoContext = photoCanvas.getContext('2d');
@@ -70,5 +99,7 @@ snap.addEventListener('click', () => {
         snap.disabled = false;
     }, 2000);
 });
+let currentSlot = 0;
+const slots = document.querySelectorAll('.slot');
 
 Camera();
