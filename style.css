@@ -1,0 +1,62 @@
+:root{
+    --lavender: #fff0f5;
+    --hot-pink: #ff69b4;
+    --light-pink: #ffb6c1;
+    --black: #000;
+    --dark-pink:#ff1493;
+    
+}
+body{
+    text-align: center;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    background: var(--lavender);
+    color: var(--hot-pink);
+}
+#app-conatiner {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    margin: 10px auto;
+    border: 10px solid var(--light-pink);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
+    background: var(--black);
+
+}
+#video, #photoCanvas, #overlayCanvas{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height:100%;
+}
+#video{
+    z-index: 1;
+}
+#photoCanvas{
+    z-index: 2;
+    display: none;
+}
+#overlayCanvas{
+    z-index: 3;
+    pointer-events: none;
+}
+.contorls{
+    margin-top: 20px;
+}
+button{
+   padding: 15px 30px;
+   font-size: 18px;
+   cursor: pointer;
+   background: var(--hot-pink);
+   color:white;
+   border: none;
+   border-radius: 50px;
+   transition: all 0.2s;
+
+}
+button: hover{
+    background:var(--dark-pink);
+    transform: scale(1.05);
+
+}
