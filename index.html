@@ -7,10 +7,17 @@
     </head>
     <body>
         <h1>My Javascript Photobooth</h1>
-        <div id = "app-conatiner">
+        <div id = "app-container">
         <video id = "video" autoplay playsinLine></video>
-        <canvas id = "photoCanvas"></canvas>
+        <div id = "photo-strip">
+            <canvas class = "slot"></canvas>
+            <canvas class = "slot"></canvas>
+            <canvas class = "slot"></canvas>
+        </div>
         <canvas id = "overlayCanvas"></canvas>
+        <div id="sticker-palette">
+    <img src="your-sticker-url.png" class="sticker-option" alt="Heart">
+</div>
         
         </div>
         <div class = "controls">
