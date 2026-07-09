@@ -2,107 +2,65 @@
     --lavender: #fff0f5;
     --hot-pink: #ff69b4;
     --light-pink: #ffb6c1;
-    --black: #000;
     --dark-pink: #ff1493;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    text-align: center;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    background: var(--lavender);
-    color: var(--hot-pink);
-    margin: 0;
-    padding: 20px;
-}
+body { text-align: center; font-family: sans-serif; background: var(--lavender); padding: 20px; }
 
 #app-container {
     position: relative;
     width: 640px;
-    min-height: 480px;
+    height: 480px;
     margin: 10px auto;
     border: 10px solid var(--light-pink);
     border-radius: 15px;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
-    background: var(--black);
+    background: #000;
     overflow: hidden;
-}
-#photo-strip {
-    display:flex;
-    flex-direction:column;
-    gap: 10px;
-    align-items:center;
-    padding: 20px;
-}
-.slot{
-    width: 320px;
-    height: 240px;
-    background: #222;
-    border: 5px solid white;
-    border-radius: 5px;
+    transition: opacity 0.6s ease-in-out;
 }
 
 #video, #overlayCanvas {
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 0;
-    width: 100%;
+    width: 100%; 
     height: 100%;
 }
 
-#video {
-    z-index: 1;
+#photo-strip {
+    display: none; /* Hidden by default */
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
 }
 
-#overlayCanvas {
-    z-index: 3;
-    pointer-events: none;
+#photo-strip.visible {
+    display: flex;
+    opacity: 1;
+}
+
+.slot { 
+    width: 200px; 
+    height: 150px; 
+    background: #222;
+    border: 5px solid white; 
 }
 
 .controls {
-    margin-top: 20px;
+    margin-top: 20px; 
 }
-#sticker-palette{
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top:20px;
-    padding: 20px;
-    border-radius:15px;
-    background: white;
-    border: 2px solid var(--light-pink);
-
-}
-}
-.sticker-option{
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-.sticker-option:hover {
-    transform: scale(1.2);
+.hidden { 
+    display: none !important;
 }
 
 button {
-    padding: 15px 30px;
+    padding: 15px 30px; 
     font-size: 18px;
     cursor: pointer;
-    background: var(--hot-pink);
-    color: white;
-    border: none;
+    background: var(--hot-pink); 
+    color: white; 
+    border: none; 
     border-radius: 50px;
-    transition: all 0.2s;
-}
-
-button:hover {
-    background: var(--dark-pink);
-    transform: scale(1.05);
-}
-button :disabled{
-    background: #ccc;
-    cursor:not-allowed;
 }
