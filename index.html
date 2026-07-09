@@ -1,28 +1,32 @@
 <!DOCTYPE html>
-<html lang ="en">
-    <head>
-    <meta charset ="UTF-8">
-    <title> Js Photobooth</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Photobooth</title>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>My Javascript Photobooth</h1>
-        <div id = "app-container">
-        <video id = "video" autoplay playsinLine></video>
-        <div id = "photo-strip">
-            <canvas class = "slot"></canvas>
-            <canvas class = "slot"></canvas>
-            <canvas class = "slot"></canvas>
-        </div>
-        <canvas id = "overlayCanvas"></canvas>
-        <div id="sticker-palette">
-    <img src="your-sticker-url.png" class="sticker-option" alt="Heart">
-</div>
-        
-        </div>
-        <div class = "controls">
-            <button id = "snap">Snap!</button>
-        </div>
-        <script src ="script.js"></script>
-    </body>
+</head>
+<body>
+    <h1>My Javascript Photobooth</h1>
+    
+    <div id="app-container">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="overlayCanvas"></canvas>
+    </div>
+
+    <div class="controls">
+        <button id="snap">Snap!</button>
+    </div>
+
+    <div id="photo-strip">
+        <canvas class="slot"></canvas>
+        <canvas class="slot"></canvas>
+        <canvas class="slot"></canvas>
+    </div>
+
+    <div id="sticker-palette">
+        <img src="your-sticker-url.png" class="sticker-option" alt="Heart">
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
